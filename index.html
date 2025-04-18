@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+
+    table {
+      width: 600px;
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border: 3px solid #2e3e73;
+      background-color: white;
+      margin-bottom: 40px;
+    }
+
+    th, td {
+      padding: 15px;
+      border: 1px solid #b4b4b4;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #cbeaf5;
+      text-align: center;
+      font-weight: bold;
+      color: #2e3e73;
+    }
+
+    .title {
+      background-color: #b4dce7;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .invoice-header {
+      background-color: #3f3f89;
+      color: white;
+      font-weight: bold;
+    }
+
+    .info {
+      background-color: #b6e7b0;
+      vertical-align: top;
+    }
+
+    .item-header {
+      background-color: #6b6bb1;
+      color: white;
+      font-weight: bold;
+    }
+
+    .totals td {
+      font-weight: bold;
+    }
+
+    .footer {
+      background-color: #6b6bb1;
+      color: white;
+      font-weight: bold;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 90%;
+      padding: 6px;
+      font-size: 14px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .submit-row td {
+      text-align: center;
+      border: none;
+      padding-top: 30px;
+    }
+
+    .btn {
+      background-color: #d7f3fa;
+      color: #1c1c6b;
+      padding: 12px 30px;
+      border: 1px solid #1c1c6b;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #b8e9f5;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td colspan="4" class="title">Invoice Tabular data</td>
+    </tr>
+    <tr class="invoice-header">
+      <td colspan="2">Invoice #<strong>123456789</strong></td>
+      <td colspan="2" class="text-right">14 January 2025</td>
+    </tr>
+    <tr class="info">
+      <td colspan="2">
+        <strong>Pay to:</strong><br>
+        Acme Billing Co.<br>
+        123 Main St.<br>
+        Cityville, NA 12345
+      </td>
+      <td colspan="2">
+        <strong>Customer:</strong><br>
+        John Smith<br>
+        321 Willow Way<br>
+        Southeast Northwesterhsire, MA 54321
+      </td>
+    </tr>
+    <tr class="item-header">
+      <th>Name / Description</th>
+      <th>Qty.</th>
+      <th>@</th>
+      <th class="text-right">Cost</th>
+    </tr>
+    <tr>
+      <td>Paperclips</td>
+      <td>1000</td>
+      <td>0.01</td>
+      <td class="text-right">10.00</td>
+    </tr>
+    <tr>
+      <td>Staples (box)</td>
+      <td>100</td>
+      <td>1.00</td>
+      <td class="text-right">100.00</td>
+    </tr>
+    <tr>
+      <td>Bond Paper (box)</td>
+      <td>100</td>
+      <td>1.00</td>
+      <td class="text-right">110.00</td>
+    </tr>
+    <tr class="totals">
+      <td colspan="3">Subtotal</td>
+      <td class="text-right">110.00</td>
+    </tr>
+    <tr class="totals">
+      <td colspan="2">Tax</td>
+      <td>8%</td>
+      <td class="text-right">8.80</td>
+    </tr>
+    <tr class="footer">
+      <td colspan="3">Grand Total</td>
+      <td class="text-right">$ 118.80</td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" name="name" placeholder="Type your name here"></td>
+    </tr>
+    <tr>
+      <td>Sex:</td>
+      <td>
+        <input type="radio" name="sex" value="male"> Male<br>
+        <input type="radio" name="sex" value="female"> Female<br>
+        <input type="radio" name="sex" value="other"> Other
+      </td>
+    </tr>
+    <tr>
+      <td>Eye Color</td>
+      <td>
+        <select name="eyeColor">
+          <option value="black">black</option>
+          <option value="blue">blue</option>
+          <option value="green">green</option>
+          <option value="brown">brown</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Check all the Applies</td>
+      <td>
+        <input type="checkbox" name="height" value="tall"> Over 6ft. Tall<br>
+        <input type="checkbox" name="weight" value="over200"> Over 200 pounds<br>
+        <input type="checkbox" name="weight" value="less200"> Less than 200 pounds
+      </td>
+    </tr>
+    <tr>
+      <td>Describe your athletic ability</td>
+      <td><textarea name="athletic" placeholder="Write here..."></textarea></td>
+    </tr>
+    <tr class="submit-row">
+      <td colspan="2">
+        <button type="submit" class="btn">Enter my Information</button>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
